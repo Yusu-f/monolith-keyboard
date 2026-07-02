@@ -7,7 +7,7 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 NAME="$1"
 INPUT="$2"
 FPS="${3:-24}"
-OUT="$ROOT/public/frames/$NAME"
+OUT="$ROOT/frames/$NAME"
 
 mkdir -p "$OUT"
 rm -f "$OUT"/*.jpg 2>/dev/null || true
