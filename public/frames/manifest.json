@@ -1,0 +1,17 @@
+{
+  "hero": {
+    "count": 121,
+    "fps": 24,
+    "pad": 3
+  },
+  "exploded": {
+    "count": 121,
+    "fps": 24,
+    "pad": 3
+  },
+  "macro": {
+    "count": 121,
+    "fps": 24,
+    "pad": 3
+  }
+}
