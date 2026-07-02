@@ -7,7 +7,7 @@
   async function initScrubbers() {
     let manifest = {};
     try {
-      const res = await fetch('/frames/manifest.json', { cache: 'no-store' });
+      const res = await fetch('frames/manifest.json', { cache: 'no-store' });
       if (res.ok) manifest = await res.json();
     } catch (e) { /* fall back below */ }
 
@@ -19,7 +19,7 @@
 
       if (!info || !info.count) {
         if (fallback) {
-          fallback.style.backgroundImage = `url('/frames/${name}/poster.jpg')`;
+          fallback.style.backgroundImage = `url('frames/${name}/poster.jpg')`;
           fallback.classList.add('show');
         }
         if (canvas) canvas.style.display = 'none';
@@ -37,7 +37,7 @@
       let drawnImg = null;
       const dpr = Math.min(devicePixelRatio || 1, 2);
 
-      const src = (i) => `/frames/${name}/${String(i).padStart(pad, '0')}.jpg`;
+      const src = (i) => `frames/${name}/${String(i).padStart(pad, '0')}.jpg`;
 
       function best(i) {
         if (isLoaded(frames[i])) return frames[i];
@@ -76,7 +76,7 @@
         im.onerror = () => {
           if (i === 1 && !firstError) {
             firstError = true;
-            if (fallback) { fallback.style.backgroundImage = `url('/frames/${name}/poster.jpg')`; fallback.classList.add('show'); }
+            if (fallback) { fallback.style.backgroundImage = `url('frames/${name}/poster.jpg')`; fallback.classList.add('show'); }
             canvas.style.display = 'none';
           }
         };
